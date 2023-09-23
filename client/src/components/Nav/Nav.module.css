@@ -1,0 +1,256 @@
+.nav {
+  background-color: rgb(63, 29, 56, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+  height: 3.5em;
+  align-items: center;
+  display: flex;
+}
+
+.navLink {
+  cursor: initial;
+}
+
+.button {
+  cursor: pointer;
+  left: 4rem;
+  margin: 1em 1em;
+  margin-left: 1em;
+  color: #fff;
+  border-radius: 1rem;
+  position: relative;
+  box-shadow: inset 2px 2px 2px 0px rgb(77, 60, 119),
+    7px 7px 20px 0px rgb(77, 60, 119, .1),
+    4px 4px 5px 0px rgb(77, 60, 119, .1);
+  outline: none;
+  width: 6rem;
+  height: 1.9rem;
+  background: linear-gradient(0deg, #000 0%, rgb(77, 60, 119) 100%);
+}
+
+.button:hover {
+  color: white;
+  background: transparent;
+  box-shadow: none;
+}
+
+.button:before,
+.button:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: rgb(225, 152, 152);
+  box-shadow:
+    -1px -1px 5px 0px #fff,
+    7px 7px 20px 0px #0003,
+    4px 4px 5px 0px #0002;
+  transition: 400ms ease all;
+}
+
+.button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.button:hover:before,
+.button:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+.containerButton {
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
+
+
+.buttons {
+  float: inline-end;
+  margin: auto;
+  margin-left: 1em;
+  color: #fff;
+  border-radius: 1rem;
+  font-size: 80%;
+  cursor: pointer;
+  position: relative;
+  box-shadow: inset 2px 2px 2px 0px rgb(77, 60, 119),
+    7px 7px 20px 0px rgb(77, 60, 119, 0.1),
+    4px 4px 5px 0px rgb(77, 60, 119, 0.1);
+  outline: none;
+  width: 6rem;
+  height: 1.9rem;
+  background: linear-gradient(0deg, #000 0%, rgb(77, 60, 119) 100%);
+}
+
+.buttons:hover {
+  color: white;
+  background: transparent;
+  box-shadow: none;
+}
+
+.buttons:before,
+.buttons:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: rgb(225, 152, 152);
+  box-shadow:
+    -1px -1px 5px 0px #fff,
+    7px 7px 20px 0px #0003,
+    4px 4px 5px 0px #0002;
+  transition: 400ms ease all;
+}
+
+.buttons:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+
+.buttons:hover:before,
+.buttons:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+@media (min-width: 1070px) {
+  .responsive {
+    display: none;
+  }
+
+  .buttonResponsive {
+    display: none;
+  }
+
+  .image {
+    display: none;
+  }
+}
+
+@media (max-width: 1070px) {
+  .button {
+    display: none;
+  }
+
+  .buttons {
+    display: none;
+  }
+
+  .responsive {
+    width: 100%;
+    height: 3.5rem;
+    position: fixed;
+    display: flex;
+    left: 0;
+    justify-content: space-between;
+  }
+
+  .buttonResponsive {
+    color: white;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: system-ui;
+    left: 0.3rem;
+    position: relative;
+  }
+
+  .image {
+    width: 13rem;
+    margin-left: 1.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .filterImage {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: 0.5rem;
+    top: 0.4rem;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .filterImageNone {
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-right: 0.5rem;
+    top: 0.4rem;
+    position: relative;
+    cursor: none;
+  }
+
+  .imagesButton {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-top: 0.8rem;
+    margin-left: 0.5rem;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .imagesButton span {
+    background-color: #fff;
+    position: absolute;
+    border-radius: 2px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    width: 100%;
+    height: 4px;
+    transition-duration: 500ms
+  }
+
+  .imagesButton span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+  }
+
+  .imagesButton span:nth-child(2) {
+    top: 13px;
+    left: 0px;
+    opacity: 1;
+  }
+
+  .imagesButton span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .imagesButton:not(.open):hover span:nth-child(1) {
+    transform: rotate(-3deg) scaleY(1.1);
+  }
+
+  .imagesButton:not(.open):hover span:nth-child(2) {
+    transform: rotate(3deg) scaleY(1.1);
+  }
+
+  .imagesButton:not(.open):hover span:nth-child(3) {
+    transform: rotate(-4deg) scaleY(1.1);
+  }
+
+  .imagesButton.open span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 13px;
+  }
+
+  .imagesButton.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .imagesButton.open span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 13px;
+  }
+}
